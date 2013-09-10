@@ -1,0 +1,68 @@
+<head>
+	{{> head_content}}
+</head>
+<body>
+	{{> navbar}}
+	{{#if currentUser}}
+		{{> main_body}}
+	{{else}}
+		{{> front_page_body}}
+	{{/if}}
+	{{> end_bootstrap_includes}}
+</body>
+
+<template name="front_page_body">
+    <div class="container">
+
+      <h1>Game of Bones</h1>
+      <p>After the game, the king and the pawn go into the same box.<br>-Italian Proverb</p>
+	  
+	  <p><b>Please log in</b></p>
+
+    </div> <!-- /container -->
+</template>
+
+<template name="main_body">
+  <body>
+    <div class="container-fluid">
+      <div class="row-fluid">
+        <div class="span3">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Views</li>
+              <li class="active"><a href="#">Dynasty</a></li>
+              <li><a href="#">Town</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+	
+	  {{> house_members}}
+		
+      <footer>
+        <p>&copy; Company 2013</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+  </body>
+</template>
+
+<template name="house_members_list">
+	<table id="house_members_list" class="table table-striped span6">
+	  <thread>
+	    <tr>
+		  <th>Name</th>
+		  <th>Location</th>
+		  <th>Hunger</th>
+		</tr>
+	  </thread>
+	  <tbody>
+		{{#each house_members}}
+	    <tr>
+		  <td>{{name}}</td>
+		  <td>{{location}}</td>
+		  <td>{{hunger}}</td>
+		</tr>
+		{{/each}}
+	  </tbody>
+	</table>
+</template>

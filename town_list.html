@@ -1,0 +1,12 @@
+<template name="town_list">
+	<ul id="town_list">
+	  {{#each towns}}
+	    {{> town}}
+	  {{/each}}
+	</ul>
+	<div id="selected-town">Selected: {{selectedTown}}</div>
+</template>
+
+<template name="town">
+	<li><a href="#" class="{{townClass}}">{{this}}</a></li>
+</template>
